@@ -1,0 +1,9 @@
+#!/bin/bash
+wget https://julialang-s3.julialang.org/bin/linux/x64/0.6/julia-0.6.4-linux-x86_64.tar.gz
+tar xzf julia-0.6.4-linux-x86_64.tar.gz
+mv julia-9d11f62bcb ~/.local/
+export PATH="$PATH:~/.local/julia-0.6.4/bin"
+echo 'export PATH="$PATH:~/.local/julia-0.6.4/bin"' >> ~/.bashrc
+echo $PATH
+python3.7 -c "from BondGraphTools.config import config"
+julia -e "using DifferentialEquations"
